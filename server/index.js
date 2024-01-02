@@ -18,6 +18,29 @@ db.once('open', () => {
 });
 
 app.use('/api/plants', require('./routes/plants'));
+app.use('/api/ecosystems', require('./routes/ecosystems'));
+app.use('/api/greenhouses', require('./routes/greenhouses'));
+app.use('/api/locations', require('./routes/locations'));
+app.use('/api/pesticides', require('./routes/pesticides'));
+app.use('/api/photos', require('./routes/photos'));
+app.use('/api/plantHarvests', require('./routes/plantHarvests'));
+app.use('/api/plantLifeCycles', require('./routes/plantLifeCycles'));
+app.use('/api/plantNutrientLevels', require('./routes/plantNutrientLevels'));
+app.use('/api/soilTypes', require('./routes/soilTypes'));
+app.use('/api/species', require('./routes/species'));
+app.use('/api/terrains', require('./routes/terrains'));
+app.use('/api/users', require('./routes/users'));
+app.use('/api/visits', require('./routes/visits'));
+app.use('/api/visitPrices', require('./routes/visitPrices'));
+app.use('/api/visitTimes', require('./routes/visitTimes'));
+app.use('/api/watering', require('./routes/watering'));
+app.use('/api/weatherData', require('./routes/weatherData'));
+app.use('/api/workers', require('./routes/workers'));
+app.use('/api/workSchedules', require('./routes/workSchedules'));
+
+
+
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

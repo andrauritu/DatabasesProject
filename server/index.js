@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 const Greenhouse = require('./models/greenhouse');
+const express = require('express');
+const app = express();
+app.use(express.json());
 
 
 // Replace with your connection string
@@ -14,15 +17,7 @@ db.once('open', () => {
     console.log("We're connected to the database!");
 });
 
-const newGreenhouse = new Greenhouse({
-    _id: 6, // This is optional if you want to set a custom ID
-    name: 'test Greenhouse'
-});
+app.use('/api/plants', require('./routes/plants'));
 
-newGreenhouse.save()
-    .then(savedGreenhouse => {
-        console.log('Greenhouse saved successfully:', savedGreenhouse);
-    })
-    .catch(err => {
-        console.error('Error saving greenhouse:', err);
-    });
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

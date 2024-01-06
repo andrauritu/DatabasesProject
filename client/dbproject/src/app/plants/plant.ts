@@ -4,5 +4,5 @@ export interface Plant {
     _id: string;
     datePlanted: Date;
     height: number;
-    greenhouseId: number;
+    greenhouseId: string;
 }

@@ -15,7 +15,6 @@ import { GreenhouseListComponent } from './greenhouses/list/list.component';
 import { GreenhouseCreateComponent } from './greenhouses/create/create.component';
 import { GreenhouseShowComponent } from './greenhouses/show/show.component';
 import { GreenhouseEditComponent } from './greenhouses/edit/edit.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +25,8 @@ import { GreenhouseEditComponent } from './greenhouses/edit/edit.component';
     PlantEditComponent,
     GreenhouseListComponent,
     GreenhouseCreateComponent,
-    GreenhouseEditComponent
+    GreenhouseEditComponent,
+
   ],
   imports: [
     BrowserModule,

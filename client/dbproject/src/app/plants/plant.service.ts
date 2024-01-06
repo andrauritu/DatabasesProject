@@ -16,7 +16,6 @@ export class PlantService {
         return this.http.post<Plant>(this.apiUrl, plantData);
     }
 
-
     getPlants(): Observable<Plant[]> {
         return this.http.get<Plant[]>(this.apiUrl);
     }
@@ -24,7 +23,6 @@ export class PlantService {
     getPlantById(id: string): Observable<Plant> {
         return this.http.get<Plant>(`${this.apiUrl}/${id}`);
     }
-
 
     deletePlant(id: string): Observable<Plant> {
         return this.http.delete<Plant>(`${this.apiUrl}/${id}`);

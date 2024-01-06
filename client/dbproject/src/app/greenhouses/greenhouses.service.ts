@@ -15,4 +15,20 @@ export class GreenhouseService {
   getGreenhouses(): Observable<Greenhouse[]> { // Replace 'any' with your greenhouse type
     return this.http.get<Greenhouse[]>(this.apiUrl);
   }
+
+  getGreenhouse(id: string): Observable<Greenhouse> { // Replace 'any' with your greenhouse type
+    return this.http.get<Greenhouse>(`${this.apiUrl}/${id}`);
+  }
+
+  createGreenhouse(greenhouse: Greenhouse): Observable<Greenhouse> {
+    return this.http.post<Greenhouse>(this.apiUrl, greenhouse);
+  }
+
+  updateGreenhouse(greenhouse: Greenhouse): Observable<Greenhouse> {
+    return this.http.put<Greenhouse>(`${this.apiUrl}/${greenhouse._id}`, greenhouse);
+  }
+
+  deleteGreenhouse(id: string): Observable<Greenhouse> {
+    return this.http.delete<Greenhouse>(`${this.apiUrl}/${id}`);
+  }
 }

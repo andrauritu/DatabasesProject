@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 // POST a new plant
 router.post('/', async (req, res) => {
     const plant = new Plant({
-        _id: req.body._id, // Assuming you're sending a custom ID, remove if not needed
+        // _id: req.body._id, // Assuming you're sending a custom ID, remove if not needed
         datePlanted: req.body.datePlanted,
         height: req.body.height,
         greenhouseId: req.body.greenhouseId

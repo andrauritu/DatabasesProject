@@ -1,0 +1,19 @@
+<!-- src/app/plants/list/list.component.html -->
+<h2>List of Plants</h2>
+
+<button routerLink="/plants/add">Add New Plant</button>
+
+<div *ngIf="plants.length > 0; else noPlants">
+    <ul>
+        <li *ngFor="let plant of plants">
+            {{ plant.datePlanted | date }} - Height: {{ plant.height }} cm -
+            <a [routerLink]="['/plants', plant._id]">Details</a>
+        </li>
+    </ul>
+</div>
+
+<button routerLink="/">Back to Home</button>
+
+<ng-template #noPlants>
+    <p>No plants available.</p>
+</ng-template>

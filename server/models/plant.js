@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const plantSchema = new mongoose.Schema({
-    _id: Number, // Custom ID if you want to set it manually
+    // _id: Number, // Custom ID if you want to set it manually
     datePlanted: {
         type: Date,
         required: true

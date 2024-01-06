@@ -1,0 +1,29 @@
+<h2>Add New Plant</h2>
+<!-- src/app/plants/create/create.component.html -->
+<form [formGroup]="plantForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading; else loading">
+    <div>
+        <label for="datePlanted">Date Planted:</label>
+        <input type="date" id="datePlanted" formControlName="datePlanted">
+        <!-- Add validation messages as needed -->
+    </div>
+    <div>
+        <label for="height">Height:</label>
+        <input type="number" id="height" formControlName="height">
+        <!-- Add validation messages as needed -->
+    </div>
+    <div>
+        <label for="greenhouseId">Greenhouse:</label>
+        <select id="greenhouseId" formControlName="greenhouseId">
+            <option *ngFor="let greenhouse of greenhouses" [value]="greenhouse._id">{{ greenhouse.name }}</option>
+        </select>
+    </div>
+    <button type="submit" [disabled]="!plantForm.valid">Create Plant</button>
+</form>
+
+<ng-template #loading>
+    <p>Loading...</p>
+</ng-template>
+
+<div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+</div>

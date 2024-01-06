@@ -26,7 +26,7 @@ router.get('/:id', async (req, res) => {
 // POST a new greenhouse
 router.post('/', async (req, res) => {
     const greenhouse = new Greenhouse({
-        _id: req.body._id, // Remove if you're not specifying the ID manually
+        // _id: req.body._id, // Remove if you're not specifying the ID manually
         name: req.body.name
     });
 

@@ -11,7 +11,7 @@ const plantSchema = new mongoose.Schema({
         required: true
     },
     greenhouseId: {
-        type: Number,
+        type: mongoose.Schema.Types.ObjectId, // This is a reference to another model
         ref: 'Greenhouse', // Reference to the Greenhouse model
         required: true
     }

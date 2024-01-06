@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // Define the Greenhouse schema
 const greenhouseSchema = new mongoose.Schema({
-    _id: Number, // If you want to specify the Greenhouse ID manually
+    // _id: Number, // If you want to specify the Greenhouse ID manually
     name: {
         type: String,
         required: true

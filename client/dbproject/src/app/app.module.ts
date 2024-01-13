@@ -26,6 +26,7 @@ import { GreenhouseEditComponent } from './greenhouses/edit/edit.component';
     GreenhouseListComponent,
     GreenhouseCreateComponent,
     GreenhouseEditComponent,
+    GreenhouseShowComponent
 
   ],
   imports: [

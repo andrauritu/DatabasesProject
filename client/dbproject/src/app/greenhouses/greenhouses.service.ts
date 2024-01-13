@@ -24,11 +24,14 @@ export class GreenhouseService {
     return this.http.post<Greenhouse>(this.apiUrl, greenhouse);
   }
 
-  updateGreenhouse(greenhouse: Greenhouse): Observable<Greenhouse> {
-    return this.http.put<Greenhouse>(`${this.apiUrl}/${greenhouse._id}`, greenhouse);
+  updateGreenhouse(id: string, greenhouseData: Greenhouse): Observable<Greenhouse> {
+    return this.http.put<Greenhouse>(`${this.apiUrl}/${id}`, greenhouseData);
   }
+
 
   deleteGreenhouse(id: string): Observable<Greenhouse> {
     return this.http.delete<Greenhouse>(`${this.apiUrl}/${id}`);
   }
+
+
 }

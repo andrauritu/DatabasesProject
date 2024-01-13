@@ -1,1 +1,15 @@
-<p>detail works!</p>
+<!-- src/app/greenhouses/show/show.component.html -->
+<div *ngIf="greenhouse; else loading">
+    <h2>Greenhouse Details</h2>
+    <p>Name: {{ greenhouse?.name }}</p>
+    <!-- Include other greenhouse details here -->
+
+</div>
+<!-- Using an anchor tag styled as a button -->
+<a *ngIf="greenhouse" [routerLink]="['/greenhouses/edit', greenhouse._id]" class="btn">Edit Greenhouse</a>
+<button *ngIf="greenhouse" (click)="deleteGreenhouse()">Delete Greenhouse</button>
+<br>
+<button routerLink="/greenhouses">Back to List</button>
+<ng-template #loading>
+    <p>Loading...</p>
+</ng-template>

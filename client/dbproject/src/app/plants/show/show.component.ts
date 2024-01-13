@@ -26,6 +26,7 @@ export class PlantShowComponent implements OnInit {
         next: (data) => {
           this.plant = data;
           this.isLoading = false;
+          console.log('Plant fetch completed');
         },
         error: (error) => {
           console.error('Error fetching plant details', error);

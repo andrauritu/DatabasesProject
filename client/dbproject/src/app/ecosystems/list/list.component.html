@@ -1,0 +1,20 @@
+<!-- src/app/ecosystems/list/list.component.html -->
+<h2>List of Ecosystems</h2>
+
+<button routerLink="/ecosystems/add">Add New Ecosystem</button>
+
+<div *ngIf="ecosystems.length > 0; else noEcosystems">
+    <ul>
+        <li *ngFor="let ecosystem of ecosystems">
+            Type: {{ ecosystem.type }} - 
+            Description: {{ ecosystem.description | slice:0:50 }}... -
+            <a [routerLink]="['/ecosystems', ecosystem._id]">Details</a>
+        </li>
+    </ul>
+</div>
+
+<button routerLink="/">Back to Home</button>
+
+<ng-template #noEcosystems>
+    <p>No ecosystems available.</p>
+</ng-template>

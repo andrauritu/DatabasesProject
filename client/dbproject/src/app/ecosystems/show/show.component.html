@@ -1,0 +1,16 @@
+<!-- src/app/ecosystems/detail/detail.component.html -->
+<div *ngIf="ecosystem; else loading">
+    <h2>Ecosystem Details</h2>
+    <p>Type: {{ ecosystem?.type }}</p>
+    <p>Description: {{ ecosystem?.description }}</p>
+    <p>GreenhouseID: {{ ecosystem?.greenhouseId }}</p>
+</div>
+<button *ngIf="ecosystem" routerLink="/ecosystems/edit/{{ ecosystem?._id }}">Edit Ecosystem</button>
+<button *ngIf="ecosystem" (click)="deleteEcosystem()">Delete Ecosystem</button>
+
+<br>
+<button routerLink="/ecosystems">Back to List</button>
+
+<ng-template #loading>
+    <p>Loading...</p>
+</ng-template>

@@ -1,0 +1,19 @@
+<!-- src/app/greenhouses/list/list.component.html -->
+<h2>List of Greenhouses</h2>
+
+<button routerLink="/greenhouses/add">Add New Greenhouse</button>
+
+<div *ngIf="greenhouses.length > 0; else noGreenhouses">
+    <ul>
+        <li *ngFor="let greenhouse of greenhouses">
+            {{ greenhouse.name }} -
+            <a [routerLink]="['/greenhouses', greenhouse._id]">Details</a>
+        </li>
+    </ul>
+</div>
+
+<button routerLink="/">Back to Home</button>
+
+<ng-template #noGreenhouses>
+    <p>No greenhouses available.</p>
+</ng-template>

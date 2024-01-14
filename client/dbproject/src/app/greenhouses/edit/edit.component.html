@@ -1,0 +1,18 @@
+<!-- src/app/greenhouses/edit/edit.component.html -->
+<div *ngIf="!isLoading; else loading">
+    <h2>Edit Greenhouse</h2>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="name">Name:</label>
+            <input id="name" type="text" formControlName="name">
+            <!-- Add other input fields for greenhouse attributes -->
+        </div>
+        <button type="submit" [disabled]="!editForm.valid">Update Greenhouse</button>
+    </form>
+</div>
+
+<button routerLink="/greenhouses">Back to List</button>
+
+<ng-template #loading>
+    <p>Loading...</p>
+</ng-template>

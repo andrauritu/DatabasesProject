@@ -1,0 +1,16 @@
+<!-- src/app/plants/detail/detail.component.html -->
+<div *ngIf="plant; else loading">
+    <h2>Details</h2>
+    <p>Date Planted: {{ plant?.datePlanted | date }}</p>
+    <p>Height: {{ plant?.height }} cm</p>
+    <p>GreenhouseID: {{ plant?.greenhouseId }}</p>
+</div>
+<button *ngIf="plant" routerLink="/plants/edit/{{ plant?._id }}">Edit Plant</button>
+<button *ngIf="plant" (click)="deletePlant()">Delete Plant</button>
+
+<br>
+<button routerLink="/plants">Back to List</button>
+
+<ng-template #loading>
+    <p>Loading...</p>
+</ng-template>

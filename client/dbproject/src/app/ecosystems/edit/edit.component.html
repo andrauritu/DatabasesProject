@@ -1,0 +1,27 @@
+<!-- edit.component.html for Ecosystems -->
+<div *ngIf="!isLoading; else loading">
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="type">Type:</label>
+            <input id="type" type="text" formControlName="type">
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <textarea id="description" formControlName="description"></textarea>
+        </div>
+        <div>
+            <label for="greenhouseId">Greenhouse:</label>
+            <select id="greenhouseId" formControlName="greenhouseId">
+                <option *ngFor="let greenhouse of greenhouses" [value]="greenhouse._id">{{ greenhouse.name }}</option>
+            </select>
+        </div>
+
+        <button type="submit" [disabled]="!editForm.valid">Update Ecosystem</button>
+    </form>
+</div>
+
+<button routerLink="/ecosystems">Back to List</button>
+
+<ng-template #loading>
+    <p>Loading...</p>
+</ng-template>

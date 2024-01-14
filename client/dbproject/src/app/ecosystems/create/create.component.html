@@ -1,0 +1,29 @@
+<h2>Add New Ecosystem</h2>
+<!-- src/app/ecosystems/create/create.component.html -->
+<form [formGroup]="ecosystemForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading; else loading">
+    <div>
+        <label for="type">Type:</label>
+        <input type="text" id="type" formControlName="type">
+        <!-- Add validation messages as needed -->
+    </div>
+    <div>
+        <label for="description">Description:</label>
+        <textarea id="description" formControlName="description"></textarea>
+        <!-- Add validation messages as needed -->
+    </div>
+    <div>
+        <label for="greenhouseId">Greenhouse:</label>
+        <select id="greenhouseId" formControlName="greenhouseId">
+            <option *ngFor="let greenhouse of greenhouses" [value]="greenhouse._id">{{ greenhouse.name }}</option>
+        </select>
+    </div>
+    <button type="submit" [disabled]="!ecosystemForm.valid">Create Ecosystem</button>
+</form>
+
+<ng-template #loading>
+    <p>Loading...</p>
+</ng-template>
+
+<div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+</div>

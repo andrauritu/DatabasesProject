@@ -15,6 +15,11 @@ import { GreenhouseListComponent } from './greenhouses/list/list.component';
 import { GreenhouseCreateComponent } from './greenhouses/create/create.component';
 import { GreenhouseShowComponent } from './greenhouses/show/show.component';
 import { GreenhouseEditComponent } from './greenhouses/edit/edit.component';
+import { EcosystemCreateComponent } from './ecosystems/create/create.component';
+import { EcosystemListComponent } from './ecosystems/list/list.component';
+import { EcosystemShowComponent } from './ecosystems/show/show.component';
+import { EcosystemEditComponent } from './ecosystems/edit/edit.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +31,12 @@ import { GreenhouseEditComponent } from './greenhouses/edit/edit.component';
     GreenhouseListComponent,
     GreenhouseCreateComponent,
     GreenhouseEditComponent,
-    GreenhouseShowComponent
+    GreenhouseShowComponent,
+    EcosystemCreateComponent,
+    EcosystemListComponent,
+    EcosystemShowComponent,
+    EcosystemEditComponent
+  
 
   ],
   imports: [

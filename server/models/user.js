@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    _id: Number, // Custom ID if you want to set it manually
+    // _id: Number, // Custom ID if you want to set it manually
     email: {
         type: String,
         required: true,

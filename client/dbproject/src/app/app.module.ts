@@ -19,6 +19,10 @@ import { EcosystemCreateComponent } from './ecosystems/create/create.component';
 import { EcosystemListComponent } from './ecosystems/list/list.component';
 import { EcosystemShowComponent } from './ecosystems/show/show.component';
 import { EcosystemEditComponent } from './ecosystems/edit/edit.component';
+import { UserListComponent } from './users/list/list.component';
+import { UserCreateComponent } from './users/create/create.component';
+import { UserShowComponent } from './users/show/show.component';
+import { UserEditComponent } from './users/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +39,12 @@ import { EcosystemEditComponent } from './ecosystems/edit/edit.component';
     EcosystemCreateComponent,
     EcosystemListComponent,
     EcosystemShowComponent,
-    EcosystemEditComponent
-  
+    EcosystemEditComponent,
+    UserListComponent,
+    UserCreateComponent,
+    UserShowComponent,
+    UserEditComponent
+
 
   ],
   imports: [

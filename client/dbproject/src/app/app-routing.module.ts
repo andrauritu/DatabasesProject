@@ -13,6 +13,10 @@ import { EcosystemListComponent } from './ecosystems/list/list.component'; // Im
 import { EcosystemCreateComponent } from './ecosystems/create/create.component'; // Import Ecosystem create component
 import { EcosystemShowComponent } from './ecosystems/show/show.component'; // Import Ecosystem show component
 import { EcosystemEditComponent } from './ecosystems/edit/edit.component'; // Import Ecosystem edit component
+import { UserListComponent } from './users/list/list.component';
+import { UserCreateComponent } from './users/create/create.component';
+import { UserShowComponent } from './users/show/show.component';
+import { UserEditComponent } from './users/edit/edit.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,6 +32,10 @@ const routes: Routes = [
   { path: 'ecosystems/add', component: EcosystemCreateComponent }, // Ecosystem create route
   { path: 'ecosystems/:id', component: EcosystemShowComponent }, // Ecosystem show route
   { path: 'ecosystems/edit/:id', component: EcosystemEditComponent }, // Ecosystem edit route
+  { path: 'users', component: UserListComponent },
+  { path: 'users/add', component: UserCreateComponent },
+  { path: 'users/:id', component: UserShowComponent },
+  { path: 'users/edit/:id', component: UserEditComponent },
 ];
 
 @NgModule({

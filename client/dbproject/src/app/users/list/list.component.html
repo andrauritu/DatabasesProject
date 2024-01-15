@@ -1,0 +1,19 @@
+<!-- src/app/users/list/list.component.html -->
+<h2>List of Users</h2>
+
+<button routerLink="/users/add">Add New User</button>
+
+<div *ngIf="users.length > 0; else noUsers">
+    <ul>
+        <li *ngFor="let user of users">
+            {{ user.username }} - Joined: {{ user.dateJoined | date }} -
+            <a [routerLink]="['/users', user._id]">Details</a>
+        </li>
+    </ul>
+</div>
+
+<button routerLink="/">Back to Home</button>
+
+<ng-template #noUsers>
+    <p>No users available.</p>
+</ng-template>

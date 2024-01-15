@@ -1,0 +1,15 @@
+<!-- src/app/users/show/show.component.html -->
+<div *ngIf="user; else loading">
+    <h2>User Details</h2>
+    <p>Email: {{ user?.email }}</p>
+    <p> Username: {{ user?.username }} </p>
+    <p>Date Joined: {{ user?.dateJoined | date }}</p>
+
+</div>
+<button *ngIf="user" routerLink="/users/edit/{{ user?._id }}">Edit User</button>
+<button *ngIf="user" (click)="deleteUser()">Delete User</button>
+<br>
+<button routerLink="/users">Back to List</button>
+<ng-template #loading>
+    <p>Loading...</p>
+</ng-template>

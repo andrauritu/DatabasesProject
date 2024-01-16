@@ -1,19 +1,81 @@
 <!-- src/app/plants/list/list.component.html -->
-<h2>List of Plants</h2>
+<!-- src/app/greenhouses/list/list.component.html -->
+<link rel="stylesheet" href="list.component.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-<button routerLink="/plants/add">Add New Plant</button>
 
-<div *ngIf="plants.length > 0; else noPlants">
-    <ul>
-        <li *ngFor="let plant of plants">
-            {{ plant.datePlanted | date }} - Height: {{ plant.height }} cm -
-            <a [routerLink]="['/plants', plant._id]">Details</a>
-        </li>
-    </ul>
-</div>
+<head>
+    <meta charset="utf-8">
+    <title>Dbproject</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
 
-<button routerLink="/">Back to Home</button>
+<body>
+    <app-root></app-root>
+    <header>
+        <h1>List of Plants</h1>
+    </header>
 
-<ng-template #noPlants>
-    <p>No plants available.</p>
-</ng-template>
+    <nav>
+        <ul>
+            <li><a routerLink="">Home</a></li>
+            <li><a routerLink="/greenhouses">
+                    Greenhouses</a></li>
+            <li><a routerLink="/ecosystems">Ecosystems</a></li>
+            <li><a routerLink="/plants">Plants</a></li>
+            <li><a routerLink="/users">Users</a></li>
+            <li><a routerLink="/joins">Joins</a></li>
+            <li><a href=" #contact" onclick="toggleSection('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="greenhouses" style="display: none;">
+        <h2>Our Greenhouses</h2>
+        <p>Step into our enchanting greenhouses and witness a stunning array of plant life. Each greenhouse is a unique
+            journey into the heart of nature.</p>
+        <iframe width="600" height="400" src="https://www.youtube.com/watch?v=IUN664s7N-c" frameborder="0"
+            allowfullscreen></iframe>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2024 Greenhouse Delights. All rights reserved.</p>
+    </footer>
+
+    <h2></h2>
+    <section id="create">
+        <div class="subsection1">
+
+        </div>
+
+        <div class="centered p-4">
+
+            <h2>List of Plants</h2>
+
+            <button class="m-2" routerLink="/plants/add">Add New Plant</button>
+
+            <div *ngIf="plants.length > 0; else noPlants">
+                <ul>
+                    <li *ngFor="let plant of plants">
+                        {{ plant.datePlanted | date }} - Height: {{ plant.height }} cm -
+                        <a class="details" [routerLink]="['/plants', plant._id]">Details</a>
+                    </li>
+                </ul>
+            </div>
+
+            <button routerLink="/">Back to Home</button>
+
+            <ng-template #noPlants>
+                <p>No plants available.</p>
+            </ng-template>
+        </div>
+
+        <div class="subsection3">
+
+        </div>
+    </section>
+
+</body>

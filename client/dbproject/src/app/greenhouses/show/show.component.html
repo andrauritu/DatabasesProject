@@ -1,5 +1,8 @@
 <!-- src/app/greenhouses/show/show.component.html -->
 <link rel="stylesheet" href="show.component.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
 
 <head>
     <meta charset="utf-8">
@@ -46,7 +49,7 @@
 
         </div>
 
-        <div class="centered">
+        <div class="centered p-3">
             <div *ngIf="greenhouse; else loading">
                 <h2>Greenhouse Details</h2>
                 <p>Name: {{ greenhouse?.name }}</p>
@@ -60,7 +63,7 @@
             <br>
             <button *ngIf="greenhouse" (click)="deleteGreenhouse()">Delete Greenhouse</button>
             <br>
-            <button routerLink="/greenhouses"><a
+            <button class="mb-3 " routerLink="/greenhouses"><a
                     href="C:\Users\40724\DatabasesProject-main\client\dbproject\src\app\greenhouses\list\list.component.html">
                     Back to List</a></button>
             <ng-template #loading>

@@ -123,6 +123,7 @@ body {
     /* Stack flex items vertically */
     min-height: 100vh;
     /* Minimum height of viewport */
+    background-color: rgb(221, 187, 208);
 }
 
 .content {

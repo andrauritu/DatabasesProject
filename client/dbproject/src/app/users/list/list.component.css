@@ -6,6 +6,15 @@
     /* Adjust padding as needed */
 }
 
+.container {
+    max-width: 800px;
+    /* Center the content */
+    margin: 0 auto;
+    /* Add some padding around the content */
+    padding: 0 20px;
+
+}
+
 body {
     display: flex;
     flex-direction: column;

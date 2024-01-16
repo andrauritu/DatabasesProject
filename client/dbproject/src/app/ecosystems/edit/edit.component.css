@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQe_UpDvZ20hGdVkwZseRIV5uMBU__i_8SuA&usqp=CAU");
+    background-image: url("https://images.nationalgeographic.org/image/upload/t_edhub_resource_key_image/v1638892071/EducationHub/photos/mountain-stream.jpg");
     color: #333;
     background-size: cover;
     height: 100vh;
@@ -81,7 +81,9 @@ button.rounded {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: bisque;
+    background-color: rgba(255, 228, 196, 0.872);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 section {

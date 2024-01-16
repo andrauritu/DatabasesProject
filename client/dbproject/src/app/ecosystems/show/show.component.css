@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vXz13cy_i_gfXY7YJ0QV26p-oE2UM5XjnA&usqp=CAU");
+    background-image: url("https://www.marinetraining.eu/sites/default/files/styles/course_view/public/course/ella-brk-aC2vAOyIOgc-unsplash_0.jpg?itok=9AZ02Mne");
     color: #333;
     background-size: cover;
     height: 100vh;
@@ -81,7 +81,9 @@ button.rounded {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: bisque;
+    background-color: rgba(255, 228, 196, 0.872);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 section {

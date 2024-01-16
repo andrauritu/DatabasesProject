@@ -1,0 +1,132 @@
+.content {
+    flex: 1;
+    /* This will make the content expand to fill the space */
+    text-align: center;
+    padding: 2em 0;
+    /* Adjust padding as needed */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    /* Remove default margin */
+    background-size: cover;
+    background-color: rgb(221, 187, 208);
+}
+
+h2 {
+    color: #333;
+    margin: 20px 0;
+}
+
+.add-button,
+.back-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 0;
+    /* Spacing around buttons */
+}
+
+.add-button:hover,
+.back-button:hover {
+    background-color: #45a049;
+}
+
+.user-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.user-list li {
+    background-color: #f9f9f9;
+    /* Light background for list items */
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    /* Rounded corners for list items */
+    border: 1px solid #ddd;
+    /* Border for list items */
+}
+
+.user-list a {
+    color: #009688;
+    /* Style for links to make them stand out*/
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.user-list a:hover {
+    text-decoration: underline;
+    /* Underline on hover for better usability */
+}
+
+
+
+@media (max-width: 768px) {
+
+    /* Responsive design adjustments for smaller screens */
+    .content {
+        padding: 10px;
+    }
+
+    .user-list li {
+        padding: 10px;
+        /* Smaller padding on smaller screens */
+    }
+}
+
+
+nav {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 0.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+.content {
+    text-align: center;
+    padding-bottom: 2em;
+    /* To prevent content from hiding behind the fixed footer */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: relative;
+    /* Changed to relative */
+    bottom: 0;
+    width: 100%;
+}

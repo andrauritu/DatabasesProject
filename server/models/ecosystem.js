@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const ecosystemSchema = new mongoose.Schema({
-    _id: Number, // Using a custom ID if you want to set it manually
     type: {
         type: String,
         required: true,
@@ -13,11 +12,12 @@ const ecosystemSchema = new mongoose.Schema({
         maxlength: 1000
     },
     greenhouseId: {
-        type: Number,
+        type: mongoose.Schema.Types.ObjectId, // This should be ObjectId
         ref: 'Greenhouse', // Reference to the Greenhouse model
         required: true
     }
 });
+
 
 const Ecosystem = mongoose.model('Ecosystem', ecosystemSchema);
 

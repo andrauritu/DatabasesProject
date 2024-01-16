@@ -3,6 +3,8 @@ const Greenhouse = require('./models/greenhouse');
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const joinRoutes = require('./routes/joins'); // Replace with the actual path to your joins route file
+
 app.use(cors());
 app.use(express.json());
 
@@ -18,6 +20,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
     console.log("We're connected to the database!");
 });
+app.use('/api', joinRoutes); // This will prefix '/api' to your new route
 
 app.use('/api/plants', require('./routes/plants'));
 app.use('/api/ecosystems', require('./routes/ecosystems'));

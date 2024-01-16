@@ -1,32 +1,42 @@
-<h2>Add New User</h2>
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading; else loading">
-    <div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" formControlName="email">
-        <!-- Add validation messages as needed -->
-    </div>
-    <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" formControlName="password">
-        <!-- Add validation messages as needed -->
-    </div>
-    <div>
-        <label for="username">Username:</label>
-        <input type="text" id="username" formControlName="username">
-        <!-- Add validation messages as needed -->
-    </div>
-    <div>
-        <label for="dateJoined">Date Joined:</label>
-        <input type="date" id="dateJoined" formControlName="dateJoined">
-        <!-- Add validation messages as needed -->
-    </div>
-    <button type="submit" [disabled]="!userForm.valid">Create User</button>
-</form>
+<!-- src/app/users/add/add-user.component.html -->
+<div class="wrapper">
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/greenhouses">Greenhouses</a></li>
+            <li><a routerLink="/ecosystems">Ecosystems</a></li>
+            <li><a routerLink="/plants">Plants</a></li>
+            <li><a routerLink="/users">Users</a></li>
+            <li><a routerLink="/joins">Joins</a></li>
+            <li><a routerLink="/contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<ng-template #loading>
-    <p>Loading...</p>
-</ng-template>
+    <!-- Add User Form -->
+    <div class="content">
+        <h2>Add User</h2>
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input id="email" type="email" formControlName="email">
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input id="username" type="text" formControlName="username">
+            </div>
+            <div class="form-group">
+                <label for="dateJoined">Date Joined:</label>
+                <input id="dateJoined" type="date" formControlName="dateJoined">
+            </div>
+            <!-- Include other fields as necessary -->
 
-<div *ngIf="errorMessage" class="error-message">
-    {{ errorMessage }}
+            <button type="submit" class="add-button" [disabled]="!userForm.valid">Add User</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
 </div>

@@ -23,6 +23,7 @@ import { UserListComponent } from './users/list/list.component';
 import { UserCreateComponent } from './users/create/create.component';
 import { UserShowComponent } from './users/show/show.component';
 import { UserEditComponent } from './users/edit/edit.component';
+import { JoinsComponent } from './joins/joins.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { UserEditComponent } from './users/edit/edit.component';
     UserListComponent,
     UserCreateComponent,
     UserShowComponent,
-    UserEditComponent
+    UserEditComponent,
+    JoinsComponent
 
 
   ],

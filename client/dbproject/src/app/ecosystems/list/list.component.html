@@ -1,20 +1,75 @@
 <!-- src/app/ecosystems/list/list.component.html -->
-<h2>List of Ecosystems</h2>
+<!-- src/app/greenhouses/list/list.component.html -->
+<link rel="stylesheet" href="list.component.css">
 
-<button routerLink="/ecosystems/add">Add New Ecosystem</button>
+<head>
+    <meta charset="utf-8">
+    <title>Dbproject</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
 
-<div *ngIf="ecosystems.length > 0; else noEcosystems">
-    <ul>
-        <li *ngFor="let ecosystem of ecosystems">
-            Type: {{ ecosystem.type }} - 
-            Description: {{ ecosystem.description | slice:0:50 }}... -
-            <a [routerLink]="['/ecosystems', ecosystem._id]">Details</a>
-        </li>
-    </ul>
-</div>
+<body>
+    <app-root></app-root>
+    <header>
+        <h1>List of Ecosystems</h1>
+    </header>
 
-<button routerLink="/">Back to Home</button>
+    <nav>
+        <ul>
+            <li><a routerLink="">Home</a></li>
+            <li><a routerLink="/greenhouses">
+                    Greenhouses</a></li>
+            <li><a routerLink="/ecosystems">Ecosystems</a></li>
+            <li><a routerLink="/plants">Plants</a></li>
+            <li><a routerLink="/users">Users</a></li>
+            <li><a routerLink="/joins">Joins</a></li>
+            <li><a href=" #contact" onclick="toggleSection('contact')">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="greenhouses" style="display: none;">
+        <h2>Our Greenhouses</h2>
+        <p>Step into our enchanting greenhouses and witness a stunning array of plant life. Each greenhouse is a unique
+            journey into the heart of nature.</p>
+    </section>
 
-<ng-template #noEcosystems>
-    <p>No ecosystems available.</p>
-</ng-template>
+
+    <footer>
+        <p>&copy; 2024 Greenhouse Delights. All rights reserved.</p>
+    </footer>
+
+    <h2></h2>
+    <section id="create">
+        <div class="subsection1">
+
+        </div>
+
+        <div class="centered">
+            <h2>List of Ecosystems</h2>
+
+            <button routerLink="/ecosystems/add">Add New Ecosystem</button>
+
+            <div *ngIf="ecosystems.length > 0; else noEcosystems">
+                <ul>
+                    <li *ngFor="let ecosystem of ecosystems">
+                        Type: {{ ecosystem.type }} -
+                        Description: {{ ecosystem.description | slice:0:50 }}... -
+                        <a [routerLink]="['/ecosystems', ecosystem._id]">Details</a>
+                    </li>
+                </ul>
+            </div>
+
+            <button routerLink="/">Back to Home</button>
+
+            <ng-template #noEcosystems>
+                <p>No ecosystems available.</p>
+            </ng-template>
+        </div>
+
+        <div class="subsection3">
+
+        </div>
+    </section>
+
+</body>

@@ -25,9 +25,10 @@ router.get('/:id', async (req, res) => {
 
 // POST a new ecosystem
 router.post('/', async (req, res) => {
+    console.log(req.body);
     const ecosystem = new Ecosystem({
         // Set ecosystem properties from req.body\
-        _id: req.body._id, // Assuming you're sending a custom ID, remove if not needed
+        // _id: req.body._id, // Assuming you're sending a custom ID, remove if not needed
         type: req.body.type,
         description: req.body.description,
         greenhouseId: req.body.greenhouseId
@@ -37,7 +38,11 @@ router.post('/', async (req, res) => {
         const newEcosystem = await ecosystem.save();
         res.status(201).json(newEcosystem);
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        if (err.name === 'ValidationError') {
+            // This will give you more details about the validation error
+            return res.status(400).json({ message: err.message, errors: err.errors });
+        }
+        res.status(500).json({ message: err.message });
     }
 });
 

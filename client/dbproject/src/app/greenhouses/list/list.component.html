@@ -1,19 +1,77 @@
 <!-- src/app/greenhouses/list/list.component.html -->
-<h2>List of Greenhouses</h2>
+<link rel="stylesheet" href="list.component.css">
 
-<button routerLink="/greenhouses/add">Add New Greenhouse</button>
+<head>
+    <meta charset="utf-8">
+    <title>Dbproject</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
 
-<div *ngIf="greenhouses.length > 0; else noGreenhouses">
-    <ul>
-        <li *ngFor="let greenhouse of greenhouses">
-            {{ greenhouse.name }} -
-            <a [routerLink]="['/greenhouses', greenhouse._id]">Details</a>
-        </li>
-    </ul>
-</div>
+<body>
+    <app-root></app-root>
+    <header>
+        <h1>List of Greenhouses</h1>
+    </header>
 
-<button routerLink="/">Back to Home</button>
+    <nav>
+        <ul>
+            <li><a routerLink="">Home</a></li>
+            <li><a routerLink="/greenhouses">
+                    Greenhouses</a></li>
+            <li><a routerLink="/ecosystems">Ecosystems</a></li>
+            <li><a routerLink="/plants">Plants</a></li>
+            <li><a routerLink="/users">Users</a></li>
+            <li><a routerLink="/joins">Joins</a></li>
+            <li><a href=" #contact" onclick="toggleSection('contact')">Contact</a></li>
+        </ul>
+    </nav>
 
-<ng-template #noGreenhouses>
-    <p>No greenhouses available.</p>
-</ng-template>
+    <section id="greenhouses" style="display: none;">
+        <h2>Our Greenhouses</h2>
+        <p>Step into our enchanting greenhouses and witness a stunning array of plant life. Each greenhouse is a unique
+            journey into the heart of nature.</p>
+        <iframe width="600" height="400" src="https://www.youtube.com/watch?v=IUN664s7N-c" frameborder="0"
+            allowfullscreen></iframe>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2024 Greenhouse Delights. All rights reserved.</p>
+    </footer>
+
+    <h2></h2>
+    <section id="create">
+        <div class="subsection1">
+
+        </div>
+
+        <div class="centered">
+            <button routerLink="/greenhouses/add"><a
+                    href="C:\Users\40724\DatabasesProject-main\client\dbproject\src\app\greenhouses\create\create.component.html">
+                    Add New Greenhouse</a></button>
+
+            <div *ngIf="greenhouses.length > 0; else noGreenhouses">
+                <ul>
+                    <li *ngFor="let greenhouse of greenhouses">
+                        {{ greenhouse.name }} -
+                        <a [routerLink]="['/greenhouses', greenhouse._id]">Details</a>
+                    </li>
+                </ul>
+            </div>
+
+            <button routerLink="/"><a href="C:\Users\40724\DatabasesProject-main\client\dbproject\src\index.html">Back
+                    to Home</a></button>
+
+            <ng-template #noGreenhouses>
+                <p>No greenhouses available.</p>
+            </ng-template>
+        </div>
+
+        <div class="subsection3">
+
+        </div>
+    </section>
+
+</body>

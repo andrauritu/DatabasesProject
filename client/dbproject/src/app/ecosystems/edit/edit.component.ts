@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EcosystemService } from '../ecosystems.service'; // Import your Ecosystem service
-import { Ecosystem } from '../ecosystems'; // Import your Ecosystem model
+import { Ecosystem } from '../ecosystem'; // Import your Ecosystem model
 import { GreenhouseService } from '../../greenhouses/greenhouses.service'; // Assuming you need greenhouses
 import { Greenhouse } from '../../greenhouses/greenhouse'; // Import Greenhouse model
 

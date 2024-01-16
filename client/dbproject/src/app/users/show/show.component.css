@@ -1,0 +1,140 @@
+/* This centers the user details card horizontally and vertically */
+.user-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    /* Or as much space as you need from the top */
+    padding: 20px;
+    max-width: 600px;
+    /* Adjust the width as needed */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Additional styles for inner content for better spacing and organization */
+.details p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 0.5em;
+    /* Space between paragraphs */
+}
+
+/* Centers the buttons container */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    /* Creates space between buttons */
+    flex-wrap: wrap;
+    /* Wrap buttons to the next line on smaller screens */
+    margin-top: 20px;
+    /* Space above the buttons */
+}
+
+/* Style for each button */
+.buttons button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Specific styles for different buttons */
+.edit-button {
+    background-color: #f0ad4e;
+    /* Bootstrap 'btn-warning' color */
+}
+
+.delete-button {
+    background-color: #d9534f;
+    /* Bootstrap 'btn-danger' color */
+}
+
+.back-button {
+    background-color: #5bc0de;
+    /* Bootstrap 'btn-info' color */
+}
+
+/* Hover effect for buttons */
+.buttons button:hover {
+    opacity: 0.9;
+}
+
+/* Ensures that the .user-details card doesn't shrink on smaller screens */
+@media (max-width: 768px) {
+    .user-details {
+        width: 90%;
+        margin-top: 20px;
+    }
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 0.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+
+html,
+body {
+    height: 100%;
+    /* Make sure the html and body are at least the height of the viewport */
+}
+
+body {
+    display: flex;
+    /* Use flexbox layout */
+    flex-direction: column;
+    /* Stack flex items vertically */
+    min-height: 100vh;
+    /* Minimum height of viewport */
+}
+
+.content {
+    flex: 1;
+    /* Flex grow to take available space */
+    /* Keep your other styles for .content */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    /* Removed 'position: absolute;' if it's there */
+}

@@ -1,26 +1,51 @@
-<div *ngIf="!isLoading; else loading">
-    <h2>Edit User</h2>
-    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
-        <div>
-            <label for="email">Email:</label>
-            <input id="email" type="email" formControlName="email">
-        </div>
-        <div>
-            <label for="username">Username:</label>
-            <input id="username" type="text" formControlName="username">
-        </div>
-        <div>
-            <label for="dateJoined">Date Joined:</label>
-            <input id="dateJoined" type="date" formControlName="dateJoined">
-        </div>
-        <!-- Include other fields as necessary -->
+<!-- src/app/users/edit/edit.component.html -->
+<div class="wrapper">
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/greenhouses">Greenhouses</a></li>
+            <li><a routerLink="/ecosystems">Ecosystems</a></li>
+            <li><a routerLink="/plants">Plants</a></li>
+            <li><a routerLink="/users">Users</a></li>
+            <li><a routerLink="/joins">Joins</a></li>
+            <li><a routerLink="/contact">Contact</a></li>
+        </ul>
+    </nav>
 
-        <button type="submit" [disabled]="!editForm.valid">Update User</button>
-    </form>
+    <!-- Edit User Form -->
+    <div class="content">
+        <div *ngIf="!isLoading; else loading">
+            <h2>Edit User</h2>
+            <form [formGroup]="editForm" (ngSubmit)="onSubmit()" class="edit-form">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input id="email" type="email" formControlName="email">
+                </div>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input id="username" type="text" formControlName="username">
+                </div>
+                <div class="form-group">
+                    <label for="dateJoined">Date Joined:</label>
+                    <input id="dateJoined" type="date" formControlName="dateJoined">
+                </div>
+                <!-- Include other fields as necessary -->
+
+                <button type="submit" class="update-button" [disabled]="!editForm.valid">Update User</button>
+            </form>
+        </div>
+
+        <button routerLink="/users" class="back-button">Back to List</button>
+    </div>
+
+    <!-- Loading Template -->
+    <ng-template #loading>
+        <p>Loading...</p>
+    </ng-template>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
 </div>
-
-<button routerLink="/users">Back to List</button>
-
-<ng-template #loading>
-    <p>Loading...</p>
-</ng-template>

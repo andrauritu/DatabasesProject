@@ -1,15 +1,44 @@
 <!-- src/app/users/show/show.component.html -->
-<div *ngIf="user; else loading">
-    <h2>User Details</h2>
-    <p>Email: {{ user?.email }}</p>
-    <p> Username: {{ user?.username }} </p>
-    <p>Date Joined: {{ user?.dateJoined | date }}</p>
 
-</div>
-<button *ngIf="user" routerLink="/users/edit/{{ user?._id }}">Edit User</button>
-<button *ngIf="user" (click)="deleteUser()">Delete User</button>
-<br>
-<button routerLink="/users">Back to List</button>
+<body>
+    <header>
+        <h1>List of users</h1>
+    </header>
+
+    <div class="content">
+        <nav>
+            <ul>
+                <li><a routerLink="">Home</a></li>
+                <li><a routerLink="/greenhouses">
+                        Greenhouses</a></li>
+                <li><a routerLink="/ecosystems">Ecosystems</a></li>
+                <li><a routerLink="/plants">Plants</a></li>
+                <li><a routerLink="/users">Users</a></li>
+                <li><a routerLink="/joins">Joins</a></li>
+                <li><a href=" #contact" onclick="toggleSection('contact')">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="user-details" *ngIf="user; else loading">
+            <h2>User Details</h2>
+            <div class="details">
+                <p><strong>Email:</strong> {{ user?.email }}</p>
+                <p><strong>Username:</strong> {{ user?.username }}</p>
+                <p><strong>Date Joined:</strong> {{ user?.dateJoined | date }}</p>
+            </div>
+
+            <div class="buttons">
+                <button *ngIf="user" routerLink="/users/edit/{{ user?._id }}" class="edit-button">Edit User</button>
+                <button *ngIf="user" (click)="deleteUser()" class="delete-button">Delete User</button>
+                <button routerLink="/users" class="back-button">Back to List</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+
+</body>
+
 <ng-template #loading>
     <p>Loading...</p>
 </ng-template>

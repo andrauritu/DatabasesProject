@@ -1,0 +1,59 @@
+<body>
+
+
+
+    <header>
+        <h1>Page of joins</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a routerLink="">Home</a></li>
+            <li><a routerLink="/greenhouses">
+                    Greenhouses</a></li>
+            <li><a routerLink="/ecosystems">Ecosystems</a></li>
+            <li><a routerLink="/plants">Plants</a></li>
+            <li><a routerLink="/users">Users</a></li>
+            <li><a routerLink="/joins">Joins</a></li>
+            <li><a href=" #contact" onclick="toggleSection('contact')">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+
+        <div>
+            <button (click)="onJoinClick()" [disabled]="isLoading" class="join-button">Join by visits</button>
+        </div>
+
+        <div *ngIf="isLoading" class="loading">Loading...</div>
+
+        <div *ngIf="joinedData.length > 0" class="table-container">
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Greenhouse ID</th>
+                        <th>Date</th>
+                        <th>User ID</th>
+                        <th>Price</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of joinedData">
+                        <td>{{ item._id }}</td>
+                        <td>{{ item.greenhouseId }}</td>
+                        <td>{{ item.date | date }}</td>
+                        <td>{{ item.userId }}</td>
+                        <td>{{ item.price }}</td>
+                        <td>{{ item.duration }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Greenhouse Delights. All rights reserved.</p>
+    </footer>
+
+
+</body>

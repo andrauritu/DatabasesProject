@@ -17,6 +17,8 @@ import { UserListComponent } from './users/list/list.component';
 import { UserCreateComponent } from './users/create/create.component';
 import { UserShowComponent } from './users/show/show.component';
 import { UserEditComponent } from './users/edit/edit.component';
+import { JoinsComponent } from './joins/joins.component'; // Import your component
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -36,6 +38,8 @@ const routes: Routes = [
   { path: 'users/add', component: UserCreateComponent },
   { path: 'users/:id', component: UserShowComponent },
   { path: 'users/edit/:id', component: UserEditComponent },
+  { path: 'joins', component: JoinsComponent } // Add your route here
+
 ];
 
 @NgModule({

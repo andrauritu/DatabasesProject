@@ -1,0 +1,95 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Rest of the navbar and footer CSS stays the same as in the previous examples */
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+/* Loader style if needed */
+#loading {
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+
+    /* Responsive design adjustments for smaller screens */
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .form-group input {
+        padding: 10px;
+        /* Smaller padding on smaller screens */
+    }
+}
+
+
+nav {
+    background-color: #333;
+    color: white;
+    padding: 0.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
